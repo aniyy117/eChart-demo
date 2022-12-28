@@ -1,10 +1,33 @@
-# Getting Started with Create React App
+# Frontend Developer Programming
+Kon'nichiwa kaihatsu-sha! 🥳
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo contains Frontend Developer Programming challenge 🌠
+# Preview 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Desktop View
+### Light Mode
+![image description](./src/app/assets/desk.png)
+
+### Dark Mode
+![image description](./src/app/assets/darkLap.png)
+
+-----
+## Tablet View
+
+### Light Mode
+![image description](./src/app/assets/tab.png)
+
+### Dark Mode
+![image description](./src/app/assets/darktab.png)
+
+-----
+## Mobile View
+### Light Mode
+![image description](./src/app/assets/phone.png)
+### Dark Mode
+![image description](./src/app/assets/darkPhone.png)
+
 
 ### `yarn start`
 
@@ -44,3 +67,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+# Libraries used
+
+- [React with typescript](https://www.typescriptlang.org/docs/handbook/react.html)
+
+- [Apache ECharts](https://echarts.apache.org/en/index.html)

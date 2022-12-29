@@ -12,6 +12,7 @@ import {
   GridComponent,
   GridComponentOption,
   VisualMapComponent,
+  MarkLineComponent,
 } from "echarts/components";
 import type { ECharts, ComposeOption, SetOptionOpts } from "echarts/core";
 import type {
@@ -39,6 +40,7 @@ use([
   VisualMapComponent,
   ScatterChart,
   CanvasRenderer,
+  MarkLineComponent,
 ]);
 
 // Combine an Option type with only required components and charts via ComposeOption

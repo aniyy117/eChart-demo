@@ -66,10 +66,27 @@ export function BarChart({
     ],
     series: [
       {
+        id: "avrSeries",
         name: "Direct",
         type: "bar",
         barWidth: "60%",
         data: verticalBar,
+        markLine: {
+          data: [
+            {
+              name: "Average of Malic Acid",
+              type: "average",
+            },
+          ],
+          label: {
+            formatter: "{b}: {c}",
+            position: "middle",
+            color: theme ? "white" : "black",
+          },
+          lineStyle: {
+            color: "red",
+          },
+        },
       },
     ],
   };

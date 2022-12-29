@@ -2,26 +2,25 @@ import "echarts-liquidfill";
 import { ReactECharts, ReactEChartsProps } from "../ui-components/ReactECharts";
 
 export interface BarChartProps {
-  horizontalBar: number[];
-  verticalBar: number[];
+  data: any;
   theme: boolean;
 }
 
-export function BarChart({
-  horizontalBar,
-  verticalBar,
-  theme,
-}: BarChartProps): JSX.Element {
+export function BarChart({ data, theme }: BarChartProps): JSX.Element {
   const option: ReactEChartsProps["option"] = {
     title: {
       left: "center",
       text: "Bar Chart",
     },
     tooltip: {
-      trigger: "axis",
-      axisPointer: {
-        type: "shadow",
-      },
+      // trigger: "axis",
+      // axisPointer: {
+      //   type: "shadow",
+      // },
+    },
+    legend: {
+      top: 400,
+      bottom: "center",
     },
     toolbox: {
       show: true,
@@ -43,7 +42,6 @@ export function BarChart({
         name: "Alcohol",
         nameLocation: "middle",
         nameGap: 30,
-        data: horizontalBar,
         axisTick: {
           alignWithLabel: true,
         },
@@ -57,20 +55,56 @@ export function BarChart({
         nameGap: 40,
       },
     ],
-    dataZoom: [
-      {
-        show: true,
-        start: 0,
-        end: 10,
-      },
-    ],
+    dataset: {
+      source: data,
+    },
     series: [
       {
-        id: "avrSeries",
-        name: "Direct",
+        name: "Heavy",
         type: "bar",
-        barWidth: "60%",
-        data: verticalBar,
+        stack: "1",
+        markLine: {
+          data: [
+            {
+              name: "Average of Malic Acid",
+              type: "average",
+            },
+          ],
+          label: {
+            formatter: "{b}: {c}",
+            position: "middle",
+            color: theme ? "white" : "black",
+          },
+          lineStyle: {
+            color: "red",
+          },
+        },
+      },
+      {
+        name: "Medium",
+        type: "bar",
+        stack: "1",
+        markLine: {
+          data: [
+            {
+              name: "Average of Malic Acid",
+              type: "average",
+            },
+          ],
+          label: {
+            formatter: "{b}: {c}",
+            position: "middle",
+            color: theme ? "white" : "black",
+          },
+          lineStyle: {
+            color: "red",
+          },
+        },
+      },
+      {
+        name: "Light",
+        type: "bar",
+        stack: "1",
         markLine: {
           data: [
             {

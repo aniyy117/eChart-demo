@@ -7,8 +7,10 @@ function App() {
   const [theme, setTheme] = useState<boolean>(false);
   let data = require("./app/utils/Wine-Data.json");
 
-  const horizontalBar = data.map((data: any) => data["Alcohol"]);
-  const verticalBar = data.map((data: any) => data["Malic Acid"]);
+  const barChatData = data.map((data: any) => ({
+    Alcohol: data["Alcohol"],
+    "Malic Acid": data["Malic Acid"],
+  }));
 
   const scatterChartData = data.map((data: any) => {
     return [data["Color intensity"], data["Hue"]];
@@ -23,11 +25,7 @@ function App() {
         {theme ? "🌙" : "☀️"}
       </button>
       <div className={theme ? "app_dark" : "app"}>
-        <BarChart
-          horizontalBar={horizontalBar}
-          verticalBar={verticalBar}
-          theme={theme}
-        />
+        <BarChart data={barChatData} theme={theme} />
         <Scatterchart scatterChartData={scatterChartData} theme={theme} />
       </div>
     </div>

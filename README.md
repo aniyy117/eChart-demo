@@ -29,6 +29,8 @@ This repo contains Frontend Developer Programming challenge 🌠
 ![image description](./src/app/assets/darkPhone.png)
 
 
+# Installation 
+
 ### `yarn start`
 
 Runs the app in the development mode.\

@@ -19,8 +19,7 @@ export function BarChart({ data, theme }: BarChartProps): JSX.Element {
       // },
     },
     legend: {
-      top: 400,
-      bottom: "center",
+      bottom: 40,
     },
     toolbox: {
       show: true,

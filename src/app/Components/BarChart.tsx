@@ -13,10 +13,10 @@ export function BarChart({ data, theme }: BarChartProps): JSX.Element {
       text: "Bar Chart",
     },
     tooltip: {
-      // trigger: "axis",
-      // axisPointer: {
-      //   type: "shadow",
-      // },
+      trigger: "axis",
+      axisPointer: {
+        type: "shadow",
+      },
     },
     legend: {
       top: "bottom",
@@ -36,75 +36,29 @@ export function BarChart({ data, theme }: BarChartProps): JSX.Element {
       bottom: "20%",
       containLabel: true,
     },
-    xAxis: [
-      {
-        type: "category",
-        name: "Alcohol",
-        nameLocation: "middle",
-        nameGap: 30,
-        axisTick: {
-          alignWithLabel: true,
-        },
+    xAxis: {
+      type: "category",
+      data: Object.keys(data),
+      name: "Alcohol",
+      nameLocation: "middle",
+      nameGap: 30,
+      axisTick: {
+        alignWithLabel: true,
       },
-    ],
-    yAxis: [
-      {
-        type: "value",
-        name: "Malic Acid",
-        nameLocation: "middle",
-        nameGap: 40,
-      },
-    ],
-    dataset: {
-      source: data,
+    },
+    yAxis: {
+      type: "value",
+      name: "Malic Acid",
+      nameLocation: "middle",
+      nameGap: 40,
     },
     series: [
       {
-        name: "Heavy",
+        data: Object.values(data),
         type: "bar",
-        stack: "1",
-        markLine: {
-          data: [
-            {
-              name: "Average of Malic Acid",
-              type: "average",
-            },
-          ],
-          label: {
-            formatter: "{b}: {c}",
-            position: "middle",
-            color: theme ? "white" : "black",
-          },
-          lineStyle: {
-            color: "red",
-          },
+        backgroundStyle: {
+          color: "rgba(180, 180, 180, 0.2)",
         },
-      },
-      {
-        name: "Medium",
-        type: "bar",
-        stack: "1",
-        markLine: {
-          data: [
-            {
-              name: "Average of Malic Acid",
-              type: "average",
-            },
-          ],
-          label: {
-            formatter: "{b}: {c}",
-            position: "middle",
-            color: theme ? "white" : "black",
-          },
-          lineStyle: {
-            color: "red",
-          },
-        },
-      },
-      {
-        name: "Light",
-        type: "bar",
-        stack: "1",
         markLine: {
           data: [
             {
